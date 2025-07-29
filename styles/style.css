@@ -754,30 +754,37 @@ footer {
     .hero-content h1 {
         font-size: 2rem;
     }
-    
     .services-container {
-        height: 500px;
+        height: auto;
+        min-height: 500px;
+        padding: 2rem 0;
+    }
+    
+    .person-container {
+        margin: 1rem 0;
     }
     
     .person-img {
-        width: 200px;
+        width: 150px;
+        height: auto;
     }
     
     .bubble {
-        width: 100px;
-        height: 100px;
-        font-size: 12px;
-        padding: 10px;
+        width: 80px;
+        height: 80px;
+        font-size: 10px;
+        padding: 5px;
     }
     
-    /* Mobile positions for bubbles */
-    .bubble1 { top: 5%; left: 35%; }
-    .bubble2 { top: 15%; right: 20%; }
-    .bubble3 { bottom: 20%; left: 20%; }
-    .bubble4 { bottom: 10%; right: 35%; }
-    .bubble5 { top: 20%; left: 20%; }
-    .bubble6 { top: 50%; right: 20%; }
+    /* Mobile positions for bubbles - إعادة ترتيبها علشان تظهر صح */
+    .bubble1 { top: -20px; left: 20%; }
+    .bubble2 { top: -20px; right: 20%; }
+    .bubble3 { bottom: -20px; left: 20%; }
+    .bubble4 { bottom: -20px; right: 20%; }
+    .bubble5 { top: 30%; left: -20px; }
+    .bubble6 { top: 30%; right: -20px; }
     
+    /* إخفاء تفاصيل الخدمة على الموبايل ونجعلها تظهر أسفل الصورة */
     .service-detail {
         position: static;
         transform: none;
@@ -786,6 +793,9 @@ footer {
         right: auto;
         top: auto;
     }
+    
+    
+    
     
     .contact-hours table {
         width: 100%;
