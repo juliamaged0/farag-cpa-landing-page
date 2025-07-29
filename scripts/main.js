@@ -2,7 +2,6 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Check for saved theme preference or respect OS preference
 const savedTheme = localStorage.getItem('theme');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -64,11 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const detailTitle = document.getElementById('detail-title');
     const detailDescription = document.getElementById('detail-description');
 
-    // Store original image source
     const originalImageSrc = personImg.src;
-    const happyImageSrc = 'assets/person-happy.png'; // تأكدي من وجود هذه الصورة
+    const happyImageSrc = 'assets/person-happy.png'; 
 
-    // Service data mapping
     const serviceData = {
         'full-accounting': {
             title: 'Full Accounting Services',
@@ -96,26 +93,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Track currently selected bubble
     let selectedBubble = null;
 
-    // Add hover and click events to each bubble
+
     bubbles.forEach(bubble => {
-        // Hover effect - temporary change
         bubble.addEventListener('mouseenter', function() {
             const serviceKey = this.getAttribute('data-service');
             const service = serviceData[serviceKey];
             
             if (service && !selectedBubble) {
-                // Change person image to happy version
                 personImg.src = happyImageSrc;
-                
-                // Show service details
+
                 detailTitle.textContent = service.title;
                 detailDescription.textContent = service.description;
                 serviceDetail.classList.remove('hidden');
                 
-                // Optional: Add animation effect
                 serviceDetail.style.opacity = '0';
                 serviceDetail.style.transform = 'translateY(-40%)';
                 setTimeout(() => {
@@ -126,40 +118,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         bubble.addEventListener('mouseleave', function() {
-            // Only revert if no bubble is selected
             if (!selectedBubble) {
-                // Revert to original image
                 personImg.src = originalImageSrc;
-                
-                // Hide service details
                 serviceDetail.classList.add('hidden');
             }
         });
 
-        // Click effect - permanent change
         bubble.addEventListener('click', function() {
             const serviceKey = this.getAttribute('data-service');
             const service = serviceData[serviceKey];
             
             if (service) {
-                // If clicking the same bubble, deselect it
                 if (selectedBubble === this) {
                     selectedBubble = null;
                     personImg.src = originalImageSrc;
                     serviceDetail.classList.add('hidden');
                 } else {
-                    // Select new bubble
                     selectedBubble = this;
-                    
-                    // Change person image to happy version
                     personImg.src = happyImageSrc;
-                    
-                    // Show service details
                     detailTitle.textContent = service.title;
                     detailDescription.textContent = service.description;
                     serviceDetail.classList.remove('hidden');
-                    
-                    // Optional: Add animation effect
                     serviceDetail.style.opacity = '0';
                     serviceDetail.style.transform = 'translateY(-40%)';
                     setTimeout(() => {
@@ -171,18 +150,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact Form Toggle
     const toggleButton = document.getElementById('toggle-form');
     const formContainer = document.getElementById('contact-form-container');
     const contactInfo = document.getElementById('contact-info');
     
     toggleButton.addEventListener('click', function() {
-        // إخفاء معلومات الاتصال وإظهار النموذج
         contactInfo.classList.add('hidden');
         formContainer.classList.remove('hidden');
     });
     
-    // Hours Toggle
     const toggleHours = document.getElementById('toggle-hours');
     const hoursTable = document.getElementById('hours-table');
     
@@ -191,23 +167,18 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.toggle('rotated');
     });
     
-    // Set today's date highlight dynamically
-    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const today = new Date().getDay(); 
     const rows = hoursTable.querySelectorAll('tr');
     
-    // Remove any existing 'today' class
     rows.forEach(row => row.classList.remove('today'));
-    
-    // Add 'today' class to the correct row (accounting for 0-based array and Monday being first)
-    // 1 = Monday, 2 = Tuesday, ..., 6 = Saturday, 0 = Sunday
-    if (today >= 1 && today <= 6) { // Monday to Saturday
-        rows[today - 1].classList.add('today'); // -1 to account for 0-based array
-    } else if (today === 0) { // Sunday
-        rows[6].classList.add('today'); // Last row is Sunday
+    if (today >= 1 && today <= 6) { 
+        rows[today - 1].classList.add('today'); 
+    } else if (today === 0) { 
+        rows[6].classList.add('today'); 
     }
 });
 
-// Contact Form Submission - Updated with better UI
+
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -216,10 +187,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
     
-    // إظهار رسالة تحميل
     showContactMessage('Sending your message...', 'info');
     
-    // Telegram Bot Configuration
+
     const TELEGRAM_BOT_TOKEN = '7991338108:AAGEPttiT1J6hvQwpPyE7hd8IVGA054Uwgw';
     const CHAT_ID = -1002869884013;
     
@@ -255,14 +225,14 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     });
 });
 
-// Function to show contact form messages
+
 function showContactMessage(text, type) {
     const messageElement = document.getElementById('contact-form-message');
     messageElement.textContent = text;
     messageElement.className = 'contact-form-message ' + type;
     messageElement.classList.remove('hidden');
     
-    // إخفاء الرسالة تلقائياً بعد 10 ثوانٍ
+    
     setTimeout(() => {
         messageElement.classList.add('hidden');
     }, 10000);
@@ -275,21 +245,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const signupSection = document.querySelector('.signup-section');
     
     if (signupForm) {
-        // استخدام المعلومات التي قدمتها
-        const serviceID = 'service_yhmgrsm'; // Service ID من EmailJS
-        const templateID = 'template_dhf7go7'; // Template ID الصحيح
-        const userID = 'rk28zX0A7mwyuHIEy'; // Public Key/User ID من EmailJS
+        const serviceID = 'service_yhmgrsm'; 
+        const templateID = 'template_dhf7go7'; 
+        const userID = 'rk28zX0A7mwyuHIEy'; 
         
         signupForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             const email = document.getElementById('signup-email').value;
-            
-            // إخفاء النموذج وإظهار رسالة تحميل
             signupSection.classList.add('form-hidden');
             showMessage('Sending confirmation email...', 'info');
             
-            // إعداد معلمات القالب
             const templateParams = {
                 to_email: email,
                 from_name: 'Farag & Associate CPA, INC',
@@ -303,7 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     signupForm.reset();
                 }, function(error) {
                     console.error('FAILED...', error);
-                    // إعادة إظهار النموذج في حالة الخطأ
                     signupSection.classList.remove('form-hidden');
                     let errorMessage = '❌ Sorry, there was an error sending the confirmation email. Please try again later.';
                     if (error.text) {
@@ -322,10 +287,8 @@ document.addEventListener('DOMContentLoaded', function() {
         signupMessage.className = 'signup-message ' + type;
         signupMessage.classList.remove('hidden');
         
-        // إخفاء الرسالة تلقائياً بعد 10 ثوانٍ
         setTimeout(() => {
             signupMessage.classList.add('hidden');
-            // إعادة إظهار النموذج بعد إخفاء الرسالة
             if (type === 'success' || type === 'error') {
                 setTimeout(() => {
                     document.querySelector('.signup-section').classList.remove('form-hidden');
