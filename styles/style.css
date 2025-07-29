@@ -177,8 +177,8 @@ body {
 
 /* Service Detail - Positioned to the right of bubbles */
 .service-detail {
-    position:absolute;
-    right: -50px;
+    position: absolute;
+    right: 50px;
     top: 50%;
     transform: translateY(-50%);
     background: white;
@@ -297,12 +297,11 @@ body {
     background-color: #2980b9;
 }
 
-/* Contact Form Container - Original styling with fixed input boxes */
 .contact-form-container {
     background: white;
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     margin-top: 2rem;
     transition: all 0.3s ease;
 }
@@ -319,126 +318,49 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: #2c3e50;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid #e1e8ed;
-    border-radius: 8px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #f8f9fa; /* خلفية رمادية فاتحة */
-    color: #333; /* لون النص الأسود */
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-    background-color: #fff; /* خلفية بيضاء عند التركيز */
 }
 
-/* Contact Form Button - Keep original styling */
-.contact-form-container button[type="submit"] {
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(135deg, #3498db, #2c3e50);
+button[type="submit"] {
+    background-color: #3498db;
     color: white;
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
-
-.contact-form-container button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-}
-
-.contact-form-container button[type="submit"]:active {
-    transform: translateY(0);
-}
-
-/* Contact Form Message Styles - Matching Sign Up Design */
-.contact-form-message {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    border-radius: 10px;
-    font-weight: 500;
     font-size: 1rem;
-    line-height: 1.6;
-    animation: slideDown 0.3s ease-out;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    white-space: pre-line;
-    text-align: left;
-    border: none;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    color: #2c3e50;
-    border: 1px solid #dee2e6;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.contact-form-message::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    border-radius: 10px 0 0 10px;
+button[type="submit"]:hover {
+    background-color: #2980b9;
 }
 
-.contact-form-message.success::before {
-    background: linear-gradient(to bottom, #27ae60, #2ecc71);
-}
-
-.contact-form-message.error::before {
-    background: linear-gradient(to bottom, #c0392b, #e74c3c);
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Sign Up Section Styles - Original styling with fixed input boxes */
+/* Sign Up Section Styles - Matching Contact Form Design */
 .signup-section {
     max-width: 500px;
     margin: 3rem auto;
     padding: 2rem;
     background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
-    transition: all 0.3s ease;
-}
-
-.signup-section h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-}
-
-.signup-section p {
-    color: #666;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
 }
 
 .signup-form {
@@ -447,82 +369,42 @@ body {
 
 .signup-form .form-group input {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid #e1e8ed;
-    border-radius: 8px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #f8f9fa; /* خلفية رمادية فاتحة */
-    color: #333; /* لون النص الأسود */
 }
 
 .signup-form .form-group input:focus {
     outline: none;
     border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-    background-color: #fff; /* خلفية بيضاء عند التركيز */
 }
 
-.signup-form button {
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(135deg, #3498db, #2c3e50);
+.signup-form button[type="submit"] {
+    background-color: #3498db;
     color: white;
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
-
-.signup-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-}
-
-.signup-form button:active {
-    transform: translateY(0);
-}
-
-/* Sign Up Message Styles - Improved */
-.signup-message {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    border-radius: 10px;
-    font-weight: 500;
     font-size: 1rem;
-    line-height: 1.6;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.signup-form button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Sign Up Message Styles - Matching Contact Form Design */
+.signup-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: 500;
     animation: slideDown 0.3s ease-out;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    white-space: pre-line;
-    text-align: left;
-    border: none;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    color: #2c3e50;
-    border: 1px solid #dee2e6;
-}
-
-.signup-message::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    border-radius: 10px 0 0 10px;
-}
-
-.signup-message.success::before {
-    background: linear-gradient(to bottom, #27ae60, #2ecc71);
-}
-
-.signup-message.error::before {
-    background: linear-gradient(to bottom, #c0392b, #e74c3c);
 }
 
 @keyframes slideDown {
@@ -536,13 +418,68 @@ body {
     }
 }
 
-/* Hide form when message is shown */
-.form-hidden .signup-form {
-    display: none;
+.signup-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
-.form-hidden .signup-message {
-    margin-top: 0;
+.signup-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Contact Form Message Styles - Matching Sign Up Design */
+.contact-form-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    animation: slideDown 0.3s ease-out;
+}
+
+.contact-form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.contact-form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Get Directions Button Styles */
+.directions-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.directions-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.directions-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a5281b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.directions-btn:active {
+    transform: translateY(0);
 }
 
 .about {
@@ -562,40 +499,7 @@ body {
     margin: 0 auto;
     font-size: 1.1rem;
 }
-/* Get Directions Button Styles */
-.directions-container {
-    text-align: center;
-    margin: 2rem 0;
-}
 
-.directions-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #3498db, #2c3e50);
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-    border: none;
-    cursor: pointer;
-}
-
-.directions-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-
-}
-
-.directions-btn:active {
-    transform: translateY(0);
-}
-
-
-
-/* Footer Styles - Updated */
 footer {
     background-color: #2c3e50;
     color: white;
@@ -691,28 +595,6 @@ footer {
     color: #bdc3c7;
 }
 
-
-
-/* Responsive design for footer */
-@media (max-width: 768px) {
-    footer {
-        padding: 2rem 1rem 1rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .footer-section h3 {
-        font-size: 1.3rem;
-    }
-    
-    .footer-section h4 {
-        font-size: 1.1rem;
-    }
-}
-
 /* Fade-in animation */
 @keyframes fadeIn {
     from {
@@ -754,48 +636,61 @@ footer {
     .hero-content h1 {
         font-size: 2rem;
     }
+    
+    /* Services Section - Mobile Fixes */
     .services-container {
         height: auto;
-        min-height: 500px;
+        min-height: 400px;
         padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .person-container {
         margin: 1rem 0;
+        position: relative;
+        z-index: 10;
     }
     
     .person-img {
-        width: 150px;
+        width: 120px;
         height: auto;
     }
     
     .bubble {
-        width: 80px;
-        height: 80px;
-        font-size: 10px;
+        width: 70px;
+        height: 70px;
+        font-size: 9px;
         padding: 5px;
     }
     
-    /* Mobile positions for bubbles - إعادة ترتيبها علشان تظهر صح */
-    .bubble1 { top: 10px; left: 20%; }
-    .bubble2 { top: 10px; right: 20%; }
-    .bubble3 { bottom: 20px; left: 20%; }
-    .bubble4 { bottom: 20px; right: 20%; }
-    .bubble5 { top: 30%; left: -20px; }
-    .bubble6 { top: 30%; right: -20px; }
+    /* Mobile positions for bubbles - قريبة من الصورة */
+    .bubble1 { top: -15px; left: 30%; }
+    .bubble2 { top: -15px; right: 30%; }
+    .bubble3 { bottom: -15px; left: 30%; }
+    .bubble4 { bottom: -15px; right: 30%; }
+    .bubble5 { top: 20%; left: 5%; }
+    .bubble6 { top: 20%; right: 5%; }
     
-    /* إخفاء تفاصيل الخدمة على الموبايل ونجعلها تظهر أسفل الصورة */
+    /* Service Detail على الموبايل */
     .service-detail {
         position: static;
         transform: none;
         width: 90%;
-        margin: 2rem auto;
+        margin: 1rem auto;
         right: auto;
         top: auto;
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     
-    
-    
+    body.dark-mode .service-detail {
+        background: #2d2d2d;
+    }
     
     .contact-hours table {
         width: 100%;
@@ -804,5 +699,58 @@ footer {
     .contact-hours table td {
         padding: 0.5rem;
         font-size: 0.9rem;
+    }
+    
+    footer {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .services-container {
+        min-height: 350px;
+        padding: 1rem 0;
+    }
+    
+    .person-img {
+        width: 100px;
+    }
+    
+    .bubble {
+        width: 60px;
+        height: 60px;
+        font-size: 8px;
+        padding: 3px;
+    }
+    
+    .bubble1 { top: -10px; left: 25%; }
+    .bubble2 { top: -10px; right: 25%; }
+    .bubble3 { bottom: -10px; left: 25%; }
+    .bubble4 { bottom: -10px; right: 25%; }
+    .bubble5 { top: 15%; left: 0%; }
+    .bubble6 { top: 15%; right: 0%; }
+    
+    .service-detail {
+        width: 95%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .service-detail h3 {
+        font-size: 1.2rem;
     }
 }
