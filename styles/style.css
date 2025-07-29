@@ -120,7 +120,6 @@ body {
     color: #2c3e50;
 }
 
-/* Services Section with Animated Bubbles - Updated Layout */
 .services-container {
     position: relative;
     width: 100%;
@@ -167,7 +166,6 @@ body {
     background: rgba(41, 128, 185, 1);
 }
 
-/* Bubble Positions - Your updated positions */
 .bubble1 { top: 5%; left: 42%; }
 .bubble2 { top: 15%; right: 25%; }
 .bubble3 { bottom: 20%; left: 25%; }
@@ -175,7 +173,6 @@ body {
 .bubble5 { top: 20%; left: 25%; }
 .bubble6 { top: 50%; right: 25%; }
 
-/* Service Detail - Positioned to the right of bubbles */
 .service-detail {
     position: absolute;
     right: -50px;
@@ -204,7 +201,6 @@ body {
     line-height: 1.6;
 }
 
-/* Contact Section Updates */
 .contact {
     padding: 5rem 2rem;
     max-width: 1200px;
@@ -352,15 +348,28 @@ button[type="submit"]:hover {
     background-color: #2980b9;
 }
 
-/* Sign Up Section Styles - Matching Contact Form Design */
 .signup-section {
     max-width: 500px;
     margin: 3rem auto;
     padding: 2rem;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.signup-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.signup-section p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .signup-form {
@@ -369,42 +378,90 @@ button[type="submit"]:hover {
 
 .signup-form .form-group input {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 1rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa; 
+    color: #333; 
 }
 
 .signup-form .form-group input:focus {
     outline: none;
     border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    background-color: #fff; 
 }
 
-.signup-form button[type="submit"] {
-    background-color: #3498db;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
+.signup-form button {
     width: 100%;
-}
-
-.signup-form button[type="submit"]:hover {
-    background-color: #2980b9;
-}
-
-/* Sign Up Message Styles - Matching Contact Form Design */
-.signup-message {
-    margin-top: 1rem;
     padding: 1rem;
-    border-radius: 5px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.signup-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.signup-form button:active {
+    transform: translateY(0);
+}
+
+.signup-message {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
     font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
     animation: slideDown 0.3s ease-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    white-space: pre-line;
+    text-align: left;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+.signup-message.success {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #2c3e50;
+    border: 1px solid #dee2e6;
+}
+
+.signup-message.success::before {
+    background: linear-gradient(to bottom, #27ae60, #2ecc71);
+}
+
+.signup-message.error {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #2c3e50;
+    border: 1px solid #dee2e6;
+}
+
+.signup-message.error::before {
+    background: linear-gradient(to bottom, #c0392b, #e74c3c);
 }
 
 @keyframes slideDown {
@@ -418,40 +475,52 @@ button[type="submit"]:hover {
     }
 }
 
-.signup-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.signup-message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-/* Contact Form Message Styles - Matching Sign Up Design */
 .contact-form-message {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
     font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
     animation: slideDown 0.3s ease-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    white-space: pre-line;
+    text-align: left;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
 }
 
 .contact-form-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #2c3e50;
+    border: 1px solid #dee2e6;
+}
+
+.contact-form-message.success::before {
+    background: linear-gradient(to bottom, #27ae60, #2ecc71);
 }
 
 .contact-form-message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #2c3e50;
+    border: 1px solid #dee2e6;
 }
 
-/* Get Directions Button Styles */
+.contact-form-message.error::before {
+    background: linear-gradient(to bottom, #c0392b, #e74c3c);
+}
+
 .directions-container {
     text-align: center;
     margin: 2rem 0;
@@ -459,7 +528,7 @@ button[type="submit"]:hover {
 
 .directions-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    background: linear-gradient(135deg, #3498db, #2c3e50);
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -473,7 +542,7 @@ button[type="submit"]:hover {
 }
 
 .directions-btn:hover {
-    background: linear-gradient(135deg, #c0392b, #a5281b);
+    background: linear-gradient(135deg, #2d95db, #273b4f);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
 }
@@ -595,7 +664,6 @@ footer {
     color: #bdc3c7;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -617,7 +685,6 @@ footer {
 .fade-in:nth-child(3) { animation-delay: 0.5s; }
 .fade-in:nth-child(4) { animation-delay: 0.7s; }
 
-/* Hidden class for toggling elements */
 .hidden {
     display: none;
 }
@@ -666,7 +733,6 @@ footer {
         padding: 5px;
     }
     
-    /* Mobile positions for bubbles - قريبة من الصورة */
     .bubble1 { top: -15px; left: 30%; }
     .bubble2 { top: -15px; right: 30%; }
     .bubble3 { bottom: -15px; left: 30%; }
@@ -674,7 +740,6 @@ footer {
     .bubble5 { top: 20%; left: 5%; }
     .bubble6 { top: 20%; right: 5%; }
     
-    /* Service Detail على الموبايل */
     .service-detail {
         position: static;
         transform: none;
@@ -690,6 +755,44 @@ footer {
     
     body.dark-mode .service-detail {
         background: #2d2d2d;
+    }
+    
+    .signup-section {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    .signup-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .signup-section p {
+        font-size: 1rem;
+    }
+    
+    .signup-form .form-group input {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .signup-form button {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .contact-form-container button[type="submit"] {
+        padding: 0.8rem;
+        font-size: 1rem;
     }
     
     .contact-hours table {
@@ -719,7 +822,6 @@ footer {
     }
 }
 
-/* Extra small devices (phones, 480px and down) */
 @media (max-width: 480px) {
     .services-container {
         min-height: 350px;
@@ -752,5 +854,52 @@ footer {
     
     .service-detail h3 {
         font-size: 1.2rem;
+    }
+    
+    /* Other sections - Smaller fonts */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .services h2,
+    .about h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .about p {
+        font-size: 1rem;
+    }
+    
+    .signup-section {
+        padding: 1rem;
+        margin: 1.5rem auto;
+    }
+    
+    .signup-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .signup-section p {
+        font-size: 0.9rem;
+    }
+    
+    .signup-form .form-group input {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+    
+    .signup-form button {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+    
+    .signup-message {
+        padding: 1rem;
+        font-size: 0.85rem;
     }
 }
