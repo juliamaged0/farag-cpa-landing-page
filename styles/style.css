@@ -777,10 +777,10 @@ footer {
     }
     
     /* Mobile positions for bubbles - إعادة ترتيبها علشان تظهر صح */
-    .bubble1 { top: -10px; left: 20%; }
-    .bubble2 { top: -10px; right: 20%; }
-    .bubble3 { bottom: -20px; left: 20%; }
-    .bubble4 { bottom: -20px; right: 20%; }
+    .bubble1 { top: 10px; left: 20%; }
+    .bubble2 { top: 10px; right: 20%; }
+    .bubble3 { bottom: 20px; left: 20%; }
+    .bubble4 { bottom: 20px; right: 20%; }
     .bubble5 { top: 30%; left: -20px; }
     .bubble6 { top: 30%; right: -20px; }
     
